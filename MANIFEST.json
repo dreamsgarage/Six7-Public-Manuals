@@ -1,0 +1,12 @@
+{ "collected": "2026-11-06T14:19:55Z", "pages": [
+  { "page": "six7-suite.html", "repo": "dreamsgarage/Six7", "ref": "origin/main", "commit": "03a8c1db796298463d7ea4ab79545c3feaeda7f0", "sha256": "4cf420a0f35201ecd1d5602cefab31e69b1d7db36e3d7ebc3c8f54b36c520cd0" },
+  { "page": "six7-kanban-configuration.html", "repo": "dreamsgarage/SIX7-Kanban", "ref": "origin/main", "commit": "538f07ff8dc8b97e9258e1802cafff743ec2f7d5", "sha256": "066925a010b650d10094399e6a7b3d7dc684a704fb052cb37c161eff1ea3ffa9" },
+  { "page": "six7-kanban-user.html", "repo": "dreamsgarage/SIX7-Kanban", "ref": "origin/main", "commit": "538f07ff8dc8b97e9258e1802cafff743ec2f7d5", "sha256": "a1a94551ade4fb1f8125bf9b5e106d5cc3728a4eb8b397f30878ed3005b1700e" },
+  { "page": "six7-crm-configuration.html", "repo": "dreamsgarage/SIX7-CRM", "ref": "origin/main", "commit": "9232adbbfb8fb195556ecf6fd9f07085f8c73eaf", "sha256": "2be688f6b0dfeda727919cae56a7600f099d30c1f95eca3f9d8dcecc755acadf" },
+  { "page": "six7-crm-user.html", "repo": "dreamsgarage/SIX7-CRM", "ref": "origin/main", "commit": "9232adbbfb8fb195556ecf6fd9f07085f8c73eaf", "sha256": "d1b0f4e9db964cf3a7d8f7b4817a448b2ce6a432eba0039ae3368c37f1b504fc" },
+  { "page": "six7-service-desk-configuration.html", "repo": "dreamsgarage/SIX7-Service-Desk", "ref": "origin/main", "commit": "537828de69c69ebe97667361f24816dc1606f22e", "sha256": "901f19349c0f824220a79dd7b26ad2bdcfce9f692c8cd23f9fbcfcfad3e18243" },
+  { "page": "six7-service-desk-user.html", "repo": "dreamsgarage/SIX7-Service-Desk", "ref": "origin/main", "commit": "537828de69c69ebe97667361f24816dc1606f22e", "sha256": "7d56ef4e9c66ca81870b69b3a1e370dbdba15d5e135ff47377a0c26fe86c2672" },
+  { "page": "six7-contracts-providers-configuration.html", "repo": "dreamsgarage/SIX7-Contracts-Providers", "ref": "origin/main", "commit": "63eb86ca04d72201a3f8706730cf5ae01a6dbbbe", "sha256": "bb21903518f5c552ca3417cf2ec51b07cf18fab1aea4115f894ec5b11a98c298" },
+  { "page": "six7-contracts-providers-user.html", "repo": "dreamsgarage/SIX7-Contracts-Providers", "ref": "origin/main", "commit": "63eb86ca04d72201a3f8706730cf5ae01a6dbbbe", "sha256": "34de5e63222daec1d3854ea9f2e8e7fbb8ef007eab6e26c49d44b7835a34e100" },
+  { "page": "six7-hub-user.html", "repo": "dreamsgarage/Six7-Core", "ref": "origin/core-build", "commit": "4d793be3db97fcca9cd5ed05d3064e8cb37dd25b", "sha256": "6ee41e62470dd800339d49de65c52eab49cc072833006a5e90ed005f020c90ee" }
+] }

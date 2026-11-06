@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f4f2eb">
+<meta name="color-scheme" content="light">
+<title>Six7 manuals</title>
+<meta name="description" content="The Six7 manuals: the Suite manual, the Hub User manual, and a Configuration and a User manual for each Six7 app.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+/* The six7.work light theme: same tokens, type and app-tab pattern. Light only. */
+:root{--ink:#242527;--dark:#202123;--paper:#f4f2eb;--orange:#df502c;--orange-strong:#bd3f1e;--muted:#67675f;--line:#d6d4cb;--collection:#eae8df;--surface:#f7f5ef;--shadow:0 14px 38px #2021230d;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4,p{margin:0}
+h1,h2,h3{line-height:1.06;letter-spacing:-.045em}
+em{font-style:normal;color:var(--orange)}
+sup{line-height:0}
+.wrap{width:min(1240px,calc(100% - 96px));margin:auto}
+.eyebrow,.mono{font-family:'Courier New',monospace;letter-spacing:.11em;font-weight:600}
+.eyebrow{display:block;margin-bottom:22px;font-size:15px}
+.mono{font-size:12px}
+.skip{position:fixed;top:-100px;left:20px;background:var(--paper);padding:12px;z-index:20}.skip:focus{top:8px}
+
+/* Header */
+.top{border-bottom:1px solid var(--line)}
+.header{height:90px;display:flex;align-items:center;gap:40px}
+.brand{display:block;width:108px;flex-shrink:0}.brand img{width:100%}
+nav{display:flex;gap:27px;margin-left:auto;font-size:14px}
+nav a{opacity:.8}nav a:hover{opacity:1;color:#b63b1e}
+.header-cta{font-size:14px;border-bottom:1px solid var(--ink);padding-bottom:3px}
+
+/* Hero */
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:60px;padding:80px 0 70px;align-items:end}
+.hero .eyebrow{color:#65665c;font-size:13px;display:flex;align-items:center;gap:9px}
+.dot{width:6px;height:6px;background:var(--orange);border-radius:50%;display:inline-block;box-shadow:0 0 0 4px #df502c22}
+h1{font-size:clamp(42px,4.7vw,66px);font-weight:600;letter-spacing:-.055em;line-height:1.06}
+.intro{font-size:18px;line-height:1.75;color:#65665c;max-width:480px}
+.hero-foot{border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:24px;padding:23px 0;font-size:13px;color:var(--muted)}
+.hero-foot strong{color:var(--ink);font-weight:400;letter-spacing:.04em}
+
+/* Sections */
+section.section{padding:96px 0}
+h2{font-size:clamp(32px,3.6vw,48px);font-weight:500}
+.section-head{display:flex;gap:70px;justify-content:space-between;align-items:end;margin-bottom:42px}
+.section-head>p{max-width:360px;font-size:18px;color:var(--muted)}
+
+/* Start here: the landing's resource cards */
+.resource-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.resource{border:1px solid var(--line);padding:25px;display:flex;flex-direction:column;gap:18px;transition:border-color .2s,background .2s}
+.resource:hover{border-color:var(--orange);background:#fff9}
+.filetype{font-family:monospace;color:var(--orange-strong);font-size:13px;display:flex;justify-content:space-between}
+.resource h3{font-size:26px;font-weight:500;line-height:1.2}
+.resource p{font-size:15px;color:var(--muted);margin-top:8px;max-width:520px}
+.resource .open{font-size:15px;margin-top:auto;align-self:start;border-bottom:1px solid var(--orange)}
+
+/* App manuals: the landing's app tabs and window */
+.collection{background:var(--collection)}
+.product-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.product-tab{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:16px 12px 18px 0;border-bottom:3px solid transparent;margin-bottom:-1px;color:var(--muted);font-size:20px;line-height:1.3}
+.product-tab .mono{font-size:12px}
+.product-tab[aria-selected=true]{color:var(--ink);border-color:var(--orange)}
+.product-tab sup{font-size:10px;margin-left:3px;color:var(--orange)}
+.product-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,4vw,56px);align-items:start;padding-top:28px;min-width:0}
+.js .product-panel[hidden]{display:none}
+.product-panel+.product-panel{border-top:1px solid var(--line);margin-top:40px}
+.js .product-panel+.product-panel{border-top:0;margin-top:0}
+.product-copy{min-width:0;padding:12px 0 0}
+.product-copy .eyebrow{font-size:13px;margin-bottom:22px}
+.product-copy h3{font-size:clamp(28px,3vw,38px);font-weight:500;line-height:1.12}
+.product-copy>p{font-size:17px;line-height:1.8;color:var(--muted);margin-top:18px;max-width:360px}
+.product-replaces{display:flex;flex-direction:column;gap:8px;margin-top:27px;font-size:16px}
+.product-replaces .mono{color:var(--muted)}
+.product-replaces strong{font-weight:500}
+.product-note{font-size:13px;line-height:1.6;margin-top:26px;color:var(--muted)}
+.product-gallery{min-width:0;width:100%;max-width:520px;justify-self:end}
+.product-window{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+.product-window-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 13px;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);letter-spacing:.04em;line-height:1.4}
+.product-window-bar strong{font-size:13px;font-weight:600;color:var(--ink);letter-spacing:0}
+.product-frame{display:block;background:#f7f6fb;aspect-ratio:36/25;overflow:hidden}
+.product-frame img{width:100%;height:100%;object-fit:contain;object-position:top}
+.manual-list{display:flex;flex-direction:column;margin-top:14px}
+.manual-link{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;padding:16px 4px;border-bottom:1px solid var(--line);transition:background .2s}
+.manual-link:first-child{border-top:1px solid var(--line)}
+.manual-link:hover{background:#fff9}
+.manual-link .mono{grid-column:1;color:var(--orange-strong);font-size:11px}
+.manual-link strong{grid-column:1;font-size:17px;font-weight:600}
+.manual-link span.desc{grid-column:1;font-size:14px;color:var(--muted);line-height:1.6}
+.manual-link .arrow{grid-column:2;grid-row:1/4;width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:18px}
+.manual-link:hover .arrow{border-color:var(--ink)}
+.solo-footnote{display:flex;gap:10px;border-top:1px solid var(--line);padding-top:20px;margin-top:40px;font-size:13px;color:var(--muted);line-height:1.75}
+.solo-footnote sup{color:var(--orange);font-size:10px;line-height:1.6}
+.solo-footnote strong{font-weight:600;color:var(--ink)}
+
+/* Footer */
+.footer{padding:35px 0;color:#63655a;border-top:1px solid var(--line)}
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:25px;font-size:13px;padding-bottom:16px;margin-bottom:12px;border-bottom:1px solid var(--line)}
+.footer-brand{display:flex;gap:20px;align-items:center}
+.footer .brand{width:85px}
+.footer-bottom{font-size:12px;line-height:1.6}
+.footer-bottom a{border-bottom:1px solid var(--line)}
+
+@media(max-width:1050px){.wrap{width:calc(100% - 56px)}nav{display:none}.header-cta{margin-left:auto}.hero-grid{gap:30px}.section-head{gap:30px}}
+@media(max-width:760px){
+  .wrap{width:calc(100% - 32px)}
+  .header{height:76px}.brand{width:87px}
+  .hero-grid{grid-template-columns:1fr;gap:28px;padding:48px 0 40px}
+  h1{font-size:clamp(39px,9vw,58px)}
+  .intro{font-size:16px;max-width:100%}
+  .hero-foot{flex-direction:column;align-items:start;gap:6px;font-size:12px}
+  section.section{padding:63px 0}
+  h2{font-size:35px}
+  .eyebrow{font-size:14px}
+  .section-head{display:block;margin-bottom:28px}.section-head>p{margin-top:20px;max-width:100%;font-size:16px}
+  .resource-grid{grid-template-columns:1fr}.resource{padding:22px}.resource h3{font-size:22px}
+  .product-tabs{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:18px}
+  .product-tab{font-size:18px;padding:13px 0 12px;gap:5px;border-bottom-width:2px}
+  .product-panel{grid-template-columns:1fr;gap:22px;padding-top:24px}
+  .product-gallery{justify-self:start;max-width:none}
+  .product-copy{padding:0}.product-copy>p{font-size:16px;max-width:none}
+  .footer-top{flex-direction:column;align-items:start;gap:16px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="header wrap">
+  <a class="brand" href="https://six7.work/" aria-label="Six7 home page"><img src="assets/six7-logo-light.webp" width="432" height="175" alt="Six7"></a>
+  <nav aria-label="Main navigation"><a href="#start">Start here</a><a href="#apps">App manuals</a></nav>
+  <a class="header-cta" href="https://six7.work/">six7.work ↗</a>
+</div></header>
+
+<main id="main">
+<section class="hero"><div class="wrap">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow"><i class="dot" aria-hidden="true"></i>SIX7 / MANUALS</span>
+      <h1>The Six7 manuals.<br><em>All in one place.</em></h1>
+    </div>
+    <p class="intro">Every Six7 app has a Configuration manual for whoever sets it up and looks after it, and a User manual for everyone who works in it. Start with the Suite manual: it covers what is the same in every app.</p>
+  </div>
+  <div class="hero-foot"><span class="mono">EDITION 2026-11-06</span><strong>10 manuals · English · Six7 alpha apps, version 0.1</strong></div>
+</div></section>
+
+<section class="section" id="start"><div class="wrap">
+  <div class="section-head"><div><span class="eyebrow">01 / START HERE</span><h2>Read these first.</h2></div><p>The basics every Six7 app shares, and your company’s page for its apps.</p></div>
+  <div class="resource-grid">
+    <a class="resource" href="six7-suite.html">
+      <span class="filetype"><span>SUITE MANUAL</span><span>HTML · 188 KB</span></span>
+      <div><h3>Suite manual</h3><p>What Six7 is, how its apps are built, and the basics that are the same in every app. Each app’s Configuration and User manuals build on this one.</p></div>
+      <span class="open">Open the Suite manual ↗</span>
+    </a>
+    <a class="resource" href="six7-hub-user.html">
+      <span class="filetype"><span>SIX7 HUB · USER MANUAL</span><span>HTML · 171 KB</span></span>
+      <div><h3>Hub User manual</h3><p>The Hub is your company’s page for its Six7 apps. It lists them, sends your questions to Six7’s support team, and keeps a record of what you asked.</p></div>
+      <span class="open">Open the Hub User manual ↗</span>
+    </a>
+  </div>
+</div></section>
+
+<section class="section collection" id="apps"><div class="wrap">
+  <div class="section-head"><div><span class="eyebrow">02 / THE APP MANUALS</span><h2>Four apps.<br><em>Two manuals each.</em></h2></div><p>Choose an app. Its Configuration manual is for whoever sets it up; its User manual is for everyone who works in it.</p></div>
+
+  <div class="product-tabs" role="tablist" aria-label="Six7 apps">
+    <a class="product-tab" role="tab" id="tab-crm" href="#crm" aria-controls="crm" aria-selected="true"><span class="mono">01</span><span>CRM<sup>1</sup></span></a>
+    <a class="product-tab" role="tab" id="tab-kanban" href="#kanban" aria-controls="kanban" aria-selected="false"><span class="mono">02</span><span>Kanban<sup>1</sup></span></a>
+    <a class="product-tab" role="tab" id="tab-service-desk" href="#service-desk" aria-controls="service-desk" aria-selected="false"><span class="mono">03</span><span>Service Desk</span></a>
+    <a class="product-tab" role="tab" id="tab-contracts-providers" href="#contracts-providers" aria-controls="contracts-providers" aria-selected="false"><span class="mono">04</span><span>C&amp;P</span></a>
+  </div>
+
+  <article class="product-panel" id="crm" role="tabpanel" aria-labelledby="tab-crm">
+    <div class="product-copy"><span class="eyebrow">01 / MANUALS</span><h3>CRM</h3>
+      <p>Give your customer relationships and opportunities a dedicated home, in your own Google Workspace.</p>
+      <div class="product-replaces"><span class="mono">REPLACES THE SHEET FOR</span><strong>Customers &amp; deals</strong></div>
+      <p class="product-note">2 manuals · Six7 CRM 0.1.0 (alpha)</p></div>
+    <div class="product-gallery">
+      <div class="product-window"><div class="product-window-bar"><strong>Six7 / CRM</strong><span class="mono">MANUALS</span></div>
+        <a class="product-frame" href="six7-crm-user.html" tabindex="-1" aria-hidden="true"><img src="assets/screen-crm.webp" width="1040" height="722" alt="" loading="lazy"></a></div>
+      <div class="manual-list">
+        <a class="manual-link" href="six7-crm-configuration.html"><span class="mono">CONFIGURATION · HTML · 235 KB</span><strong>Configuration manual</strong><span class="desc">For the person who sets up and looks after the CRM, from the first Setup / repair to the day-to-day checks.</span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="manual-link" href="six7-crm-user.html"><span class="mono">USER · HTML · 592 KB</span><strong>User manual</strong><span class="desc">How to work in the CRM, where your companies, contacts and deals live and your pipeline moves.</span><span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="product-panel" id="kanban" role="tabpanel" aria-labelledby="tab-kanban">
+    <div class="product-copy"><span class="eyebrow">02 / MANUALS</span><h3>Kanban</h3>
+      <p>Bring tasks and projects out of scattered spreadsheets and into a shared board.</p>
+      <div class="product-replaces"><span class="mono">REPLACES THE SHEET FOR</span><strong>Tasks &amp; projects</strong></div>
+      <p class="product-note">2 manuals · Six7 Kanban 0.1.0 (alpha)</p></div>
+    <div class="product-gallery">
+      <div class="product-window"><div class="product-window-bar"><strong>Six7 / Kanban</strong><span class="mono">MANUALS</span></div>
+        <a class="product-frame" href="six7-kanban-user.html" tabindex="-1" aria-hidden="true"><img src="assets/screen-kanban.webp" width="1040" height="722" alt="" loading="lazy"></a></div>
+      <div class="manual-list">
+        <a class="manual-link" href="six7-kanban-configuration.html"><span class="mono">CONFIGURATION · HTML · 151 KB</span><strong>Configuration manual</strong><span class="desc">For the person who sets up and looks after Kanban, from the first Setup / repair to the day-to-day checks.</span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="manual-link" href="six7-kanban-user.html"><span class="mono">USER · HTML · 812 KB</span><strong>User manual</strong><span class="desc">How to work on the boards where your work moves from To do to Done.</span><span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="product-panel" id="service-desk" role="tabpanel" aria-labelledby="tab-service-desk">
+    <div class="product-copy"><span class="eyebrow">03 / MANUALS</span><h3>Service Desk</h3>
+      <p>Give requests and tickets a dedicated place, so service work is easier to follow.</p>
+      <div class="product-replaces"><span class="mono">REPLACES THE SHEET FOR</span><strong>Requests &amp; tickets</strong></div>
+      <p class="product-note">2 manuals · Six7 Service Desk 0.1.0 (alpha)</p></div>
+    <div class="product-gallery">
+      <div class="product-window"><div class="product-window-bar"><strong>Six7 / Service Desk</strong><span class="mono">MANUALS</span></div>
+        <a class="product-frame" href="six7-service-desk-user.html" tabindex="-1" aria-hidden="true"><img src="assets/screen-service-desk.webp" width="1040" height="722" alt="" loading="lazy"></a></div>
+      <div class="manual-list">
+        <a class="manual-link" href="six7-service-desk-configuration.html"><span class="mono">CONFIGURATION · HTML · 422 KB</span><strong>Configuration manual</strong><span class="desc">For the people who set up and look after the desk, from the first Setup / repair to the queues, rules and day-to-day checks.</span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="manual-link" href="six7-service-desk-user.html"><span class="mono">USER · HTML · 938 KB</span><strong>User manual</strong><span class="desc">How to ask for help, and how the desk answers: for everyone who sends a request, and for the agents, leads and managers who work the queues.</span><span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="product-panel" id="contracts-providers" role="tabpanel" aria-labelledby="tab-contracts-providers">
+    <div class="product-copy"><span class="eyebrow">04 / MANUALS</span><h3>C&amp;P</h3>
+      <p>Keep contracts and renewals together in a customer-owned contract register.</p>
+      <div class="product-replaces"><span class="mono">REPLACES THE SHEET FOR</span><strong>Contract register</strong></div>
+      <p class="product-note">2 manuals · Six7 Contracts &amp; Providers 0.1.0 (alpha)</p></div>
+    <div class="product-gallery">
+      <div class="product-window"><div class="product-window-bar"><strong>Six7 / C&amp;P</strong><span class="mono">MANUALS</span></div>
+        <a class="product-frame" href="six7-contracts-providers-user.html" tabindex="-1" aria-hidden="true"><img src="assets/screen-contracts-providers.webp" width="1040" height="722" alt="" loading="lazy"></a></div>
+      <div class="manual-list">
+        <a class="manual-link" href="six7-contracts-providers-configuration.html"><span class="mono">CONFIGURATION · HTML · 320 KB</span><strong>Configuration manual</strong><span class="desc">For the people who set up and look after Contracts &amp; Providers, from the first Setup / repair to the approval rules and the day-to-day checks.</span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="manual-link" href="six7-contracts-providers-user.html"><span class="mono">USER · HTML · 953 KB</span><strong>User manual</strong><span class="desc">How to ask for a purchase, keep your contracts and their renewals, and decide what is sent to you.</span><span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+
+  <p class="solo-footnote"><sup>1</sup><span><strong>Solo businesses.</strong> CRM and Kanban will be tested with personal Gmail accounts for one-person businesses. This testing is planned; compatibility has not yet been validated.</span></p>
+</div></section>
+</main>
+
+<footer class="footer"><div class="wrap">
+  <div class="footer-top"><div class="footer-brand"><a class="brand" href="https://six7.work/" aria-label="Six7 home page"><img src="assets/six7-logo-light.webp" width="432" height="175" alt="Six7" loading="lazy"></a><span>Business apps. Owned by you.</span></div><span>Owned by you. Priced without seats.</span></div>
+  <p class="footer-bottom">Edition 2026-11-06 · each page’s source is listed in <a href="MANIFEST.json">MANIFEST.json</a>. Google Workspace is a trademark of Google LLC. Six7 is not affiliated with Google.</p>
+</div></footer>
+
+<script>
+// App tabs: one panel at a time with JavaScript; without it every panel shows, one under the other.
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.product-tab'));
+  var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+  document.documentElement.classList.add('js');
+  function show(i, focus) {
+    tabs.forEach(function (t, j) {
+      var on = i === j;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.setAttribute('tabindex', on ? '0' : '-1');
+      panels[j].hidden = !on;
+    });
+    if (focus) tabs[i].focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function (e) {
+      e.preventDefault(); show(i, false);
+      try { history.replaceState(null, '', '#' + panels[i].id); } catch (err) {}
+    });
+    t.addEventListener('keydown', function (e) {
+      var k = e.key, n = tabs.length, to = null;
+      if (k === 'ArrowRight') to = (i + 1) % n; else if (k === 'ArrowLeft') to = (i + n - 1) % n;
+      else if (k === 'Home') to = 0; else if (k === 'End') to = n - 1;
+      if (to !== null) { e.preventDefault(); show(to, true); }
+    });
+  });
+  var start = panels.map(function (p) { return '#' + p.id; }).indexOf(location.hash);
+  show(start < 0 ? 0 : start, false);
+})();
+</script>
+</body>
+</html>
